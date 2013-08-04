@@ -1,0 +1,31 @@
+<% @page_title = "Emails List" %>
+
+<%= link_to(" Back to Menu", {:controller => 'home', :action => 'index'}) %>
+  
+  <div><%= pluralize(@emails.size, 'email') %> found</div>
+<h2>Listing emails</h2>
+
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Mail text</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @emails.each do |email| %>
+  <tr>
+    <td><%= email.subject %></td>
+    <td><%= email.mail_text %></td>
+    <td><%= email.user_id %></td>
+    <td><%= link_to 'Show', email %></td>
+    <td><%= link_to 'Edit', edit_email_path(email) %></td>
+    <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Add New Email', new_email_path %>

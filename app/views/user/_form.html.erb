@@ -1,0 +1,21 @@
+<!-- <ul>
+  <%#if @user.errors%>
+    <%# @user.errors.full_messages.each do |msg| %>
+      <li><%#= msg %></li>
+    <%# end %>
+   <%# end %> 
+</ul> -->
+<table summary="User form fields">
+  <tr>
+    <th><%= f.label(:name) %></th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:email) %></th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:password) %></th>
+    <td><%= f.password_field(:password) %></td>
+  </tr>
+</table>

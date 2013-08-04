@@ -13,3 +13,28 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  if ($(".edit_email").length > 0) {
+    $('#email_subject').keyup(function() {
+       autoSavePost();
+    });
+    $('#email_mail_text').keyup(function() {
+       autoSavePost();
+    });
+    
+  }    
+});
+
+function autoSavePost() {
+  $.ajax({
+  type: "POST",
+  url: "autosave",
+  data: $(".edit_email").serialize(),
+  dataType: "script",
+  success: function(data) {
+    console.log($(".edit_email").serialize());
+  }
+});
+ 
+}

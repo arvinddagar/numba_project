@@ -1,4 +1,9 @@
 SampleProject::Application.routes.draw do
+  resources :emails
+
+  match 'emails/:id/autosave' => 'emails#autosave', :as => :autosave
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,5 +60,10 @@ SampleProject::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match 'register', :to => 'user#create'
+  match 'login', :to => 'user#sign_in'
+  match 'logout', :to => 'user#logout'
+ # match 'compose', :to => 'emails#new'
+  #match 'autosave', :to => 'emails#autosave'
   root :to => "home#index"
 end

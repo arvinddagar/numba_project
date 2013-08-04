@@ -1,19 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: 
-  from_name: MyString
-  from_email: MyString
-  to_email: MyString
   subject: MyString
-  html_body: MyText
-  text_body: MyText
+  mail_text: MyString
+  user_id: 1
 
 two:
-  user: 
-  from_name: MyString
-  from_email: MyString
-  to_email: MyString
   subject: MyString
-  html_body: MyText
-  text_body: MyText
+  mail_text: MyString
+  user_id: 1

@@ -1,1 +1,10 @@
 <h1>Home</h1>
+<% if session[:id] %>
+<%= link_to(" Create Email", {:controller =>'emails', :action => 'create'}) %>
+<br/>
+<%= link_to(" Logout", {:controller =>'user', :action => 'logout'}) %>
+<%else%>
+<%= link_to(" Register", {:controller =>'user', :action => 'create'}) %>
+<br/>
+<%= link_to(" Login", {:controller =>'user', :action => 'sign_in'}) %>
+<%end%>
